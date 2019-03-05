@@ -1,1 +1,1 @@
-export { WebApiClient } from './web-api-client';
+export { WebApi } from './web-api';

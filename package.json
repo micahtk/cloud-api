@@ -1,6 +1,6 @@
 {
   "name": "@alwaysai/web-api",
-  "description": "JavaScript SDK for the alwaysAI Web API for Node.js and browser",
+  "description": "An SDK for the alwaysAI Web API",
   "version": "0.0.0-0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
