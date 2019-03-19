@@ -1,7 +1,7 @@
 {
   "name": "@alwaysai/web-api",
   "description": "An SDK for the alwaysAI Web API",
-  "version": "0.0.0-0",
+  "version": "0.0.0-1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "engines": {
