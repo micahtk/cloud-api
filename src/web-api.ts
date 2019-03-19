@@ -1,12 +1,10 @@
-import axios from 'axios';
+import * as t from 'io-ts';
+import { specs } from './specs';
 
-export class WebApi {
-  public href: string;
-  public constructor(href: string) {
-    this.href = href;
-  }
-  public async ping() {
-    const res = await axios(`${this.href}/_ah/start`);
-    return res.data;
-  }
-}
+type Specs = typeof specs;
+
+export type WebApi = {
+  [methodName in keyof Specs]: (
+    ...args: t.TypeOf<Specs[methodName]['argsC']>
+  ) => Promise<t.TypeOf<Specs[methodName]['resultC']>>
+};

@@ -20,7 +20,9 @@
       "program": "${workspaceFolder}/node_modules/.bin/ts-node",
       "args": [
         "src/cli.ts",
-        "createDb"
+        "createUser",
+        "--args",
+        "[{\"username\":\"alwaysai2\",\"password\":\"foo\",\"emailAddress\":null}]"
       ],
     },
   ]
