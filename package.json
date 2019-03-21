@@ -1,7 +1,7 @@
 {
-  "name": "@alwaysai/web-api",
-  "description": "An SDK for the alwaysAI Web API",
-  "version": "0.0.0-1",
+  "name": "@alwaysai/cloud-api",
+  "description": "A library for defining the alwaysAI Cloud API",
+  "version": "0.0.0-0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "engines": {
@@ -21,11 +21,7 @@
   },
   "dependencies": {
     "@carnesen/coded-error": "0.1.0",
-    "@types/mkdirp": "0.5.2",
-    "@types/prompts": "1.2.0",
-    "io-ts": "1.8.3",
-    "mkdirp": "0.5.1",
-    "prompts": "2.0.4"
+    "io-ts": "1.8.3"
   },
   "devDependencies": {
     "@alwaysai/tsconfig": "0.0.0",
@@ -52,7 +48,7 @@
     "name": "alwaysAI, Inc.",
     "email": "contact@alwaysai.co"
   },
-  "repository": "github:alwaysai/web-api",
-  "homepage": "https://github.com/alwaysai/web-api#readme",
+  "repository": "github:alwaysai/cloud-api",
+  "homepage": "https://github.com/alwaysai/cloud-api#readme",
   "license": "MIT"
 }
