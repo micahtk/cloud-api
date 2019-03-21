@@ -20,9 +20,12 @@
     "postversion": "npm publish"
   },
   "dependencies": {
-    "@alwaysai/always-cli": "0.0.0-3",
     "@carnesen/coded-error": "0.1.0",
-    "io-ts": "1.8.3"
+    "@types/mkdirp": "0.5.2",
+    "@types/prompts": "1.2.0",
+    "io-ts": "1.8.3",
+    "mkdirp": "0.5.1",
+    "prompts": "2.0.4"
   },
   "devDependencies": {
     "@alwaysai/tsconfig": "0.0.0",
