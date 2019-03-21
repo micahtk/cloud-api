@@ -1,6 +1,6 @@
 import * as t from 'io-ts';
 import { emptyTuple } from './codecs/empty-tuple';
-import { nullableString } from './codecs/nullable-string';
+import { nullableString, optionalString } from './codecs/strings';
 
 export const rpcMethodSpecs = {
   createUser: {
@@ -30,7 +30,7 @@ export const rpcMethodSpecs = {
 
   throwError: {
     description: 'Throw an error for testing purposes',
-    argsCodec: t.tuple([t.string, t.any, t.any]),
+    argsCodec: t.tuple([optionalString, t.any, t.any], 'throwErrorArgs'),
     resultCodec: t.unknown,
   },
 };
