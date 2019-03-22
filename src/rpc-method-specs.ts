@@ -34,3 +34,6 @@ export const rpcMethodSpecs = {
     resultCodec: t.unknown,
   },
 };
+
+export type RpcMethodSpecs = typeof rpcMethodSpecs;
+export type RpcMethodSpec = (RpcMethodSpecs)[keyof RpcMethodSpecs];
