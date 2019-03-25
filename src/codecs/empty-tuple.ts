@@ -5,7 +5,7 @@ function isEmptyTuple(u: unknown): u is [] {
 }
 
 export const emptyTuple = new t.Type<[]>(
-  'EmptyTuple',
+  'args',
   isEmptyTuple,
   (u, c) => (isEmptyTuple(u) ? t.success(u) : t.failure(u, c)),
   t.identity,
