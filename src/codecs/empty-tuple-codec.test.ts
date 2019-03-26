@@ -1,13 +1,13 @@
-import { emptyTuple } from './empty-tuple';
+import { emptyTupleCodec } from './empty-tuple-codec';
 
-describe(emptyTuple.name, () => {
+describe(emptyTupleCodec.name, () => {
   it('decodes a "right" if input is an empty array', () => {
-    const decoded = emptyTuple.decode([]);
+    const decoded = emptyTupleCodec.decode([]);
     expect(decoded.isRight()).toBe(true);
   });
 
   it('decodes a "left" if input is a non-empty array', () => {
-    const decoded = emptyTuple.decode(['foo']);
+    const decoded = emptyTupleCodec.decode(['foo']);
     expect(decoded.isLeft()).toBe(true);
   });
 });

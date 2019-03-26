@@ -1,41 +1,24 @@
 import * as t from 'io-ts';
 
-import { emptyTuple } from '../codecs/empty-tuple';
-import { nullableString, optionalString, uuidString } from '../codecs/strings';
+import { emptyTupleCodec } from '../codecs/empty-tuple-codec';
+import { optionalString } from '../codecs/string-codecs';
 
 import { createUser } from './create-user';
 import { createModel } from './create-model';
+import { getModel } from './get-model';
+import { getUser } from './get-user';
+import { listModels } from './list-models';
 
 export const rpcMethodSpecs = {
   createModel,
   createUser,
-
+  getModel,
+  getUser,
+  listModels,
   getNull: {
     description: 'Get the value "null" for testing purposes',
-    argsCodec: emptyTuple,
+    argsCodec: emptyTupleCodec,
     resultCodec: t.null,
-  },
-
-  getUser: {
-    description: 'Get a user by username',
-    argsCodec: t.tuple(
-      [
-        t.type({
-          username: t.string,
-        }),
-      ],
-      'args',
-    ),
-    resultCodec: t.type(
-      {
-        username: t.string,
-        uuid: uuidString,
-        firstName: nullableString,
-        lastName: nullableString,
-        createdAt: t.string,
-      },
-      'result',
-    ),
   },
 
   throwError: {

@@ -1,5 +1,5 @@
 import * as t from 'io-ts';
-import { nullableString } from '../codecs/strings';
+import { nullableString } from '../codecs/string-codecs';
 
 export const createUser = {
   description: 'Create a new alwaysAI user',
