@@ -21,8 +21,7 @@
   },
   "dependencies": {
     "@carnesen/coded-error": "0.1.0",
-    "io-ts": "1.8.3",
-    "io-ts-types": "0.4.4"
+    "io-ts": "1.8.3"
   },
   "devDependencies": {
     "@alwaysai/tsconfig": "0.0.0",
