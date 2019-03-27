@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@alwaysai/tsconfig": "0.0.0",
-    "@alwaysai/tslint-config": "0.0.0",
+    "@alwaysai/tslint-config": "0.0.1",
     "@types/jest": "24.0.11",
     "@types/node": "11.11.3",
     "jest": "24.5.0",
