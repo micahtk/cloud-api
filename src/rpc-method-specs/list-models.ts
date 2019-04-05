@@ -1,10 +1,8 @@
-import * as t from 'io-ts';
-
-import { emptyTupleCodec } from '../codecs/empty-tuple-codec';
+import * as t from '@alwaysai/codecs';
 
 export const listModels = {
   description: 'Create a new alwaysAI model',
-  argsCodec: emptyTupleCodec,
+  argsCodec: t.emptyArray,
   resultCodec: t.array(
     t.type(
       {

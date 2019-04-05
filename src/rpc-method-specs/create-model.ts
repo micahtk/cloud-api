@@ -1,4 +1,4 @@
-import * as t from 'io-ts';
+import * as t from '@alwaysai/codecs';
 
 export const createModel = {
   description: 'Create a new alwaysAI model',

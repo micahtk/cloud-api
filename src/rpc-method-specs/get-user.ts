@@ -1,6 +1,4 @@
-import * as t from 'io-ts';
-
-import { nullableString, uuidString } from '../codecs/string-codecs';
+import * as t from '@alwaysai/codecs';
 
 export const getUser = {
   description: 'Get a user by username',
@@ -15,9 +13,9 @@ export const getUser = {
   resultCodec: t.type(
     {
       username: t.string,
-      uuid: uuidString,
-      firstName: nullableString,
-      lastName: nullableString,
+      uuid: t.uuid,
+      firstName: t.nullableString,
+      lastName: t.nullableString,
       createdAt: t.string,
     },
     'result',

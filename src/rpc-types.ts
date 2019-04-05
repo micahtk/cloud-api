@@ -1,4 +1,4 @@
-import * as t from 'io-ts';
+import * as t from '@alwaysai/codecs';
 
 import { rpcMethodSpecs } from './rpc-method-specs';
 
