@@ -1,13 +1,15 @@
-import * as t from '@alwaysai/codecs';
+import * as t from 'io-ts';
+import { RpcMethodSpec } from '../rpc-types';
 
-export const createUser = {
+export const createUser = RpcMethodSpec({
   description: 'Create a new alwaysAI user',
   argsCodec: t.tuple(
     [
       t.type({
         username: t.string,
-        emailAddress: t.nullableString,
+        email: t.string,
         password: t.string,
+        displayName: t.string,
       }),
     ],
     'args',
@@ -18,4 +20,4 @@ export const createUser = {
     },
     'result',
   ),
-};
+});

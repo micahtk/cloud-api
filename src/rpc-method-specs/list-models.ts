@@ -1,8 +1,9 @@
-import * as t from '@alwaysai/codecs';
+import * as t from 'io-ts';
+import * as c from '@alwaysai/codecs';
 
 export const listModels = {
   description: 'Create a new alwaysAI model',
-  argsCodec: t.emptyArray,
+  argsCodec: c.emptyArray,
   resultCodec: t.array(
     t.type(
       {

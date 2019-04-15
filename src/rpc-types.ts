@@ -1,6 +1,4 @@
-import * as t from '@alwaysai/codecs';
-
-import { rpcMethodSpecs } from './rpc-method-specs';
+import * as t from 'io-ts';
 
 export const rpcRequestCodec = t.type({
   methodName: t.string,
@@ -17,12 +15,33 @@ export type RpcError = {
   message: string;
   code?: string | number | null;
   data?: any;
+  stack?: string;
 };
 
-type Specs = typeof rpcMethodSpecs;
-
-export type RpcApi = {
-  [methodName in keyof Specs]: (
-    ...args: t.TypeOf<Specs[methodName]['argsCodec']>
-  ) => Promise<t.TypeOf<Specs[methodName]['resultCodec']>>
+export type RpcMethodSpec<T, U> = {
+  description: string;
+  argsCodec: T;
+  resultCodec: U;
 };
+
+export function RpcMethodSpec<T, U>(opts: {
+  description: string;
+  argsCodec: T;
+  resultCodec: U;
+}) {
+  const spec: RpcMethodSpec<T, U> = { ...opts };
+  return spec;
+}
+
+export const getVersionSpec = RpcMethodSpec({
+  description: 'Get version information about this software',
+  argsCodec: t.tuple([t.string]),
+  resultCodec: t.type(
+    {
+      version: t.string,
+      gitCommitHash: t.string,
+      gitDiffHash: t.string,
+    },
+    'result',
+  ),
+});

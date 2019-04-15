@@ -1,6 +1,8 @@
-import * as t from '@alwaysai/codecs';
+import * as t from 'io-ts';
+import * as c from '@alwaysai/codecs';
+import { RpcMethodSpec } from '../rpc-types';
 
-export const getUser = {
+export const getUser = RpcMethodSpec({
   description: 'Get a user by username',
   argsCodec: t.tuple(
     [
@@ -13,11 +15,11 @@ export const getUser = {
   resultCodec: t.type(
     {
       username: t.string,
-      uuid: t.uuid,
-      firstName: t.nullableString,
-      lastName: t.nullableString,
+      uuid: c.uuid,
+      firstName: c.nullableString,
+      lastName: c.nullableString,
       createdAt: t.string,
     },
     'result',
   ),
-};
+});

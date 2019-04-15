@@ -1,8 +1,11 @@
-import * as t from '@alwaysai/codecs';
+import * as t from 'io-ts';
+import * as c from '@alwaysai/codecs';
 
-export const getVersion = {
+import { RpcMethodSpec } from '../rpc-types';
+
+export const getVersion = RpcMethodSpec({
   description: 'Get version information about this software',
-  argsCodec: t.emptyArray,
+  argsCodec: c.emptyArray,
   resultCodec: t.type(
     {
       version: t.string,
@@ -11,4 +14,4 @@ export const getVersion = {
     },
     'result',
   ),
-};
+});
