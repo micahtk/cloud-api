@@ -4,14 +4,6 @@ export function ErrorSpec(opts: { httpStatus: number; message: string }) {
   return { ...opts };
 }
 
-const UNEXPECTED_CONDITION = 'UNEXPECTED_CONDITION';
-
-export function findErrorSpec(maybeCode: string) {
-  return errorSpecs.hasOwnProperty(maybeCode)
-    ? { code: maybeCode, spec: errorSpecs[maybeCode as keyof typeof errorSpecs] }
-    : { code: UNEXPECTED_CONDITION, spec: errorSpecs[UNEXPECTED_CONDITION] };
-}
-
 export const errorSpecs = {
   AUTHENTICATION_REQUIRED: ErrorSpec({
     httpStatus: s.UNAUTHORIZED,
@@ -33,7 +25,7 @@ export const errorSpecs = {
     httpStatus: s.CONFLICT,
     message: 'The model is already in use by another account',
   }),
-  [UNEXPECTED_CONDITION]: ErrorSpec({
+  UNEXPECTED_CONDITION: ErrorSpec({
     httpStatus: s.INTERNAL_SERVER_ERROR,
     message: 'Encountered an unexpected condition',
   }),

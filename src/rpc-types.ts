@@ -32,16 +32,3 @@ export function RpcMethodSpec<T, U>(opts: {
   const spec: RpcMethodSpec<T, U> = { ...opts };
   return spec;
 }
-
-export const getVersionSpec = RpcMethodSpec({
-  description: 'Get version information about this software',
-  argsCodec: t.tuple([t.string]),
-  resultCodec: t.type(
-    {
-      version: t.string,
-      gitCommitHash: t.string,
-      gitDiffHash: t.string,
-    },
-    'result',
-  ),
-});

@@ -1,11 +1,11 @@
-import { createUser } from './create-user';
 import { createModel } from './create-model';
+import { createUser } from './create-user';
 import { getModel } from './get-model';
-import { getUser } from './get-user';
-import { listModels } from './list-models';
-import { getVersion } from './get-version';
-import { throwError } from './throw-error';
 import { getNull } from './get-null';
+import { getUser } from './get-user';
+import { getVersion } from './get-version';
+import { listModels } from './list-models';
+import { throwError } from './throw-error';
 
 export const rpcMethodSpecs = {
   createModel,
