@@ -16,8 +16,6 @@ export const getUser = RpcMethodSpec({
     {
       username: t.string,
       uuid: c.uuid,
-      firstName: c.nullableString,
-      lastName: c.nullableString,
       createdAt: t.string,
     },
     'result',

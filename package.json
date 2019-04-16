@@ -24,6 +24,9 @@
     "@carnesen/coded-error": "0.1.0",
     "http-status-codes": "1.3.2"
   },
+  "peerDependencies": {
+    "io-ts": "*"
+  },
   "devDependencies": {
     "@alwaysai/tsconfig": "0.0.0",
     "@alwaysai/tslint-config": "0.0.3",
