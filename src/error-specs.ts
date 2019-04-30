@@ -13,17 +13,25 @@ export const errorSpecs = {
     httpStatus: s.CONFLICT,
     message: 'The email address is already in use by another account',
   }),
+  FORBIDDEN: ErrorSpec({
+    httpStatus: s.FORBIDDEN,
+    message: 'User is not authorized to perform this action',
+  }),
   ID_TOKEN_EXPIRED: ErrorSpec({
     httpStatus: s.UNAUTHORIZED,
     message: 'ID token has expired',
   }),
-  MODEL_NOT_FOUND: ErrorSpec({
+  INVALID_TOKEN: ErrorSpec({
+    httpStatus: s.UNAUTHORIZED,
+    message: 'ID token is not valid',
+  }),
+  MODEL_VERSION_NOT_FOUND: ErrorSpec({
     httpStatus: s.NOT_FOUND,
     message: 'The specified model could not be found',
   }),
-  MODEL_ALREADY_EXISTS: ErrorSpec({
+  MODEL_VERSION_ALREADY_EXISTS: ErrorSpec({
     httpStatus: s.CONFLICT,
-    message: 'The model is already in use by another account',
+    message: 'The model version already exists',
   }),
   UNEXPECTED_CONDITION: ErrorSpec({
     httpStatus: s.INTERNAL_SERVER_ERROR,
