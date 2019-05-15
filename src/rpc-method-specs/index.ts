@@ -6,12 +6,14 @@ import { getUser } from './get-user';
 import { getVersion } from './get-version';
 import { listModelVersions } from './list-model-versions';
 import { throwError } from './throw-error';
+import { finalizeModelVersion } from './finalize-model-version';
 
 export const rpcMethodSpecs = {
   createUser,
   getUser,
 
   createModelVersion,
+  finalizeModelVersion,
   listModelVersions,
   getModelVersion,
 

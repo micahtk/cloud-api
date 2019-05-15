@@ -4,3 +4,4 @@ export { rpcRequestCodec, RpcError, RpcResult, RpcRequest } from './rpc-types';
 export { RpcApi } from './rpc-api';
 export { errorSpecs } from './error-specs';
 export { ErrorCode } from './error-code';
+export { modelVersion, ModelVersion } from './codecs/model-version';
