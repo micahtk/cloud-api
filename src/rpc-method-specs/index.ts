@@ -7,6 +7,7 @@ import { getVersion } from './get-version';
 import { listModelVersions } from './list-model-versions';
 import { throwError } from './throw-error';
 import { finalizeModelVersion } from './finalize-model-version';
+import { deleteModelVersions } from './delete-model-versions';
 
 export const rpcMethodSpecs = {
   createUser,
@@ -16,6 +17,7 @@ export const rpcMethodSpecs = {
   finalizeModelVersion,
   listModelVersions,
   getModelVersion,
+  deleteModelVersions,
 
   getVersion,
   getNull,
