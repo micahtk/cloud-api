@@ -25,6 +25,22 @@ export const errorSpecs = {
     httpStatus: s.UNAUTHORIZED,
     message: 'ID token is not valid',
   }),
+  INVALID_JSON: ErrorSpec({
+    httpStatus: s.BAD_REQUEST,
+    message: 'Payload is not valid JSON',
+  }),
+  INVALID_RPC_METHOD_NAME: ErrorSpec({
+    httpStatus: s.BAD_REQUEST,
+    message: 'Invalid RPC method name',
+  }),
+  INVALID_RPC_REQUEST: ErrorSpec({
+    httpStatus: s.BAD_REQUEST,
+    message: 'Payload is not a valid RPC request',
+  }),
+  INVALID_RPC_METHOD_ARGS: ErrorSpec({
+    httpStatus: s.BAD_REQUEST,
+    message: 'Invalid RPC method arguments',
+  }),
   MODEL_VERSION_NOT_FOUND: ErrorSpec({
     httpStatus: s.NOT_FOUND,
     message: 'The specified model could not be found',
