@@ -9,10 +9,6 @@ export const errorSpecs = {
     httpStatus: s.UNAUTHORIZED,
     message: 'Authentication is required',
   }),
-  EMAIL_ALREADY_EXISTS: ErrorSpec({
-    httpStatus: s.CONFLICT,
-    message: 'The email address is already in use by another account',
-  }),
   FORBIDDEN: ErrorSpec({
     httpStatus: s.FORBIDDEN,
     message: 'User is not authorized to perform this action',
@@ -20,6 +16,10 @@ export const errorSpecs = {
   ID_TOKEN_EXPIRED: ErrorSpec({
     httpStatus: s.UNAUTHORIZED,
     message: 'ID token has expired',
+  }),
+  INVALID_CONTENT_TYPE: ErrorSpec({
+    httpStatus: s.BAD_REQUEST,
+    message: 'Invalid content type',
   }),
   INVALID_TOKEN: ErrorSpec({
     httpStatus: s.UNAUTHORIZED,
@@ -52,13 +52,5 @@ export const errorSpecs = {
   UNEXPECTED_CONDITION: ErrorSpec({
     httpStatus: s.INTERNAL_SERVER_ERROR,
     message: 'Encountered an unexpected condition',
-  }),
-  USERNAME_ALREADY_EXISTS: ErrorSpec({
-    httpStatus: s.CONFLICT,
-    message: 'The username is already in use by another account',
-  }),
-  USERNAME_NOT_FOUND: ErrorSpec({
-    httpStatus: s.NOT_FOUND,
-    message: 'The specified username could not be found',
   }),
 };

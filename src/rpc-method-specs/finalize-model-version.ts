@@ -1,10 +1,9 @@
 import * as t from 'io-ts';
 
-import { uuid } from '@alwaysai/codecs';
-
 import { RpcMethodSpec } from '../rpc-types';
 
-const argsCodec = t.tuple([uuid], 'arg');
+// TODO: arg0 is uuid
+const argsCodec = t.tuple([t.string], 'arg');
 
 export const finalizeModelVersion = RpcMethodSpec({
   description: 'Set "final" to true on a model version',

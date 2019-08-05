@@ -1,25 +1,20 @@
 import { createModelVersion } from './create-model-version';
-import { createUser } from './create-user';
+import { deleteModelVersions } from './delete-model-versions';
+import { finalizeModelVersion } from './finalize-model-version';
 import { getModelVersion } from './get-model-version';
 import { getNull } from './get-null';
-import { getUser } from './get-user';
-import { getVersion } from './get-version';
+import { getServerVersion } from './get-server-version';
 import { listModelVersions } from './list-model-versions';
 import { throwError } from './throw-error';
-import { finalizeModelVersion } from './finalize-model-version';
-import { deleteModelVersions } from './delete-model-versions';
 
 export const rpcMethodSpecs = {
-  createUser,
-  getUser,
-
   createModelVersion,
   finalizeModelVersion,
-  listModelVersions,
   getModelVersion,
+  listModelVersions,
   deleteModelVersions,
 
-  getVersion,
+  getServerVersion,
   getNull,
   throwError,
 };

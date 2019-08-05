@@ -1,9 +1,9 @@
 import * as t from 'io-ts';
 import * as c from '@alwaysai/codecs';
-import { modelVersion } from '../codecs/model-version';
+import { rpcModelVersionCodec } from '../rpc-model-version';
 
 export const listModelVersions = {
   description: 'List alwaysAI model versions',
   argsCodec: c.emptyArray,
-  resultCodec: t.array(modelVersion),
+  resultCodec: t.array(rpcModelVersionCodec),
 };
