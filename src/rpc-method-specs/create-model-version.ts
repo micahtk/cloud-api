@@ -3,19 +3,23 @@ import * as t from 'io-ts';
 import { RpcMethodSpec } from '../rpc-types';
 import { rpcModelVersionCodec } from '../rpc-model-version';
 
-const {
-  uuid,
-  final,
-  created_at,
-  version,
-  deleted,
-  updated_at,
-  ...restProps
-} = rpcModelVersionCodec.props;
-// ^^ These fields are assigned by the back end
+const { props } = rpcModelVersionCodec;
+
+export const rpcCreateModelVersionArg0Props = {
+  accuracy: props.accuracy,
+  description: props.description,
+  id: props.description,
+  inference_time: props.inference_time,
+  license: props.license,
+  mean_average_precision_top_1: props.mean_average_precision_top_1,
+  mean_average_precision_top_5: props.mean_average_precision_top_5,
+  model_parameters: props.model_parameters,
+  public: props.public,
+  website_url: props.website_url,
+};
 
 export const rpcCreateModelVersionArg0Codec = t.type(
-  { ...restProps },
+  rpcCreateModelVersionArg0Props,
   'CreateModelVersionData',
 );
 

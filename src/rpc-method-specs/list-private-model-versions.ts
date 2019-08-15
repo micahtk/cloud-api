@@ -1,9 +1,12 @@
 import * as t from 'io-ts';
-import * as c from '@alwaysai/codecs';
 import { rpcModelVersionCodec } from '../rpc-model-version';
 
-export const listModelVersions = {
+export const listPrivateModelVersions = {
   description: 'List alwaysAI model versions',
-  argsCodec: c.emptyArray,
+  argsCodec: t.tuple([
+    t.type({
+      publisher: t.string,
+    }),
+  ]),
   resultCodec: t.array(rpcModelVersionCodec),
 };
