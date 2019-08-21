@@ -8,6 +8,7 @@ import { getServerVersion } from './get-server-version';
 import { listPublicModelVersions } from './list-public-model-versions';
 import { throwError } from './throw-error';
 import { listPrivateModelVersions } from './list-private-model-versions';
+import { getModelVersionByUuid } from './get-model-version-by-uuid';
 
 export const rpcMethodSpecs = {
   createModelVersion,
@@ -15,6 +16,7 @@ export const rpcMethodSpecs = {
   deleteModelVersions,
   finalizeModelVersion,
   getModelVersion,
+  getModelVersionByUuid,
   listPublicModelVersions,
   listPrivateModelVersions,
 

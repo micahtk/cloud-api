@@ -6,6 +6,7 @@ export const rpcModelVersionCodec = t.type(
     created_at: t.string,
     deleted: t.boolean,
     description: t.string,
+    failed: t.boolean,
     final: t.boolean,
     id: t.string,
     inference_time: t.union([t.number, t.null]),
