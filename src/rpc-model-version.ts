@@ -5,6 +5,7 @@ export const rpcModelVersionCodec = t.type(
     accuracy: t.string,
     created_at: t.string,
     deleted: t.boolean,
+    deprecated: t.boolean,
     description: t.string,
     failed: t.boolean,
     final: t.boolean,
