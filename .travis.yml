@@ -1,6 +1,9 @@
----
 language: node_js
 node_js:
-  - 8
-  - 10
-  - 12
+- 8
+- 10
+- 12
+env:
+  global:
+    - AWS_ACCESS_KEY_ID: AKIA6PDW4RG4C5I3NR4C
+    - secure: TqR25Bs16gEzzRgfiJAUZxoPHZGlOhV+gACd2JhjYoMQ0JGqLpO1c6NlVyO5+MQIzfmTOyxaMEKlEQiQvXkZx9cZdxh9UZHnbaoVmiOPSenCGuPMoKRkshkK7LMlRMapGFz/ENcVjoyH7kXEzdNzg4g92W+Euj3XaTudAOeUQT93bao5TZ27usWm55yzNtJSCLwZpzFPod7NSLKFLoHw2Fjs1WEj4fawgeyuMeFl4SQvYhgnmtyNp05wXfwTKZcuDgWuhG3gJozD6DGku1BWxGeO/HtqzKlUJhHp1ZZkZK7vhd9T7nzp+fXfYsi7VrEstXpbVtdCqrBCzAgEAGBxdMMbnBJ/e7Lux22jV/KvZT2JDe2H7IbRndfe5ocBTjXTKT5Vc7m4XidivjYj/Vj8APkOA5bu5aCmWzP9OExGzrGY57h8rmIEYzj8t7lvS6iLf6Cm9G7T4nu4GC0wpoLDDKUYL0MO3mIMoT4cp+OM1eGRdGgcHrFH1HVdm1JTxH7BQIlqCMVsTzinXUcMOiArKdxoddx/FxaMMsT1yZwAU5AdqKstq+ZnF9hN+VnalroFCkjs5f44ElBqqCpPMA6LPfmXi5N3DiHjxtx+rWmaNlWd+n83ea49vZqDjHk78MTL3Iijmc5pri8TNyLjUnteUEMYU6saHc170d/SdjjmkkY=

@@ -1,7 +1,5 @@
 import './index';
 
-describe('TODO', () => {
-  it('TODO', () => {
-    // new WebApi('http://localhost');
-  });
+describe('Entry-point index file', () => {
+  it('Is importable', () => {});
 });

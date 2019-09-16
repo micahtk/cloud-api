@@ -11,3 +11,12 @@ export {
   rpcCreateModelVersionArg0Codec,
   RpcCreateModelVersionArg0,
 } from './rpc-method-specs/create-model-version';
+
+export {
+  AuthenticationClient,
+  AuthenticationState,
+  AuthenticationStorage,
+} from './authentication-client';
+export { CloudApiUrl } from './cloud-api-url';
+export { RpcClient } from './rpc-client';
+export { SystemDomainName } from './system-domain-name';
