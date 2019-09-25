@@ -1,19 +1,14 @@
 /// <reference lib="dom" />
 
 import { cast } from '@alwaysai/codecs';
-import {
-  rpcMethodSpecs,
-  RpcApi,
-  RpcRequest,
-  CLOUD_API_RPC_PATH,
-  RpcResult,
-  RpcError,
-} from '@alwaysai/cloud-api';
 
 import { CodedError } from '@carnesen/coded-error';
 import { ErrorCode } from './error-code';
-import { SystemId } from './constants';
+import { SystemId, CLOUD_API_RPC_PATH } from './constants';
 import { CloudApiUrl } from './cloud-api-url';
+import { RpcApi } from './rpc-api';
+import { rpcMethodSpecs } from './rpc-method-specs';
+import { RpcRequest, RpcResult, RpcError } from './rpc-types';
 
 type Raw = (data: any) => Promise<any>;
 
