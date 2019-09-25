@@ -81,5 +81,5 @@ describe(AuthenticationClient.name, () => {
     expect(info.username).toBe(testUser.username);
 
     await testUser.destroy();
-  });
+  }, 10000);
 });
