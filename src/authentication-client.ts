@@ -228,14 +228,32 @@ export function AuthenticationClient(config: {
       if (!cognitoUser) {
         throw new CodedError(NOT_SIGNED_IN_MESSAGE, ErrorCode.NOT_SIGNED_IN);
       }
-      cognitoUser.getSession((err: Error, nextCognitoUserSession: CognitoUserSession) => {
-        if (err) {
-          reject(err);
-        } else {
-          setCognitoUserSession(nextCognitoUserSession);
-          resolve(nextCognitoUserSession);
-        }
-      });
+      cognitoUser.getSession(
+        (errFromGetSession: Error, nextCognitoUserSession: CognitoUserSession) => {
+          if (errFromGetSession) {
+            reject(errFromGetSession);
+          } else {
+            const refreshToken = nextCognitoUserSession.getRefreshToken();
+            if (!cognitoUser) {
+              throw new Error('cognitoUser is no longer defined');
+            }
+            // It might be overkill to refresh the session every time, but we
+            // were running into intermittent "ID token has expired" errors and
+            // this seems to fix that.
+            cognitoUser.refreshSession(
+              refreshToken,
+              (errFromRefreshSession, refreshedSession) => {
+                if (errFromRefreshSession) {
+                  reject(errFromRefreshSession);
+                } else {
+                  setCognitoUserSession(refreshedSession);
+                  resolve(refreshedSession);
+                }
+              },
+            );
+          }
+        },
+      );
     });
   }
 
