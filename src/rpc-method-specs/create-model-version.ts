@@ -7,6 +7,7 @@ const { props } = rpcModelVersionCodec;
 
 export const rpcCreateModelVersionArg0Props = {
   accuracy: props.accuracy,
+  dataset: props.dataset,
   description: props.description,
   id: props.description,
   inference_time: props.inference_time,
