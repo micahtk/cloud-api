@@ -2,7 +2,10 @@ window['fetch'] = require('node-fetch');
 
 import { AuthenticationClient, AuthenticationState } from './authentication-client';
 import { TestUser } from './test-user';
-import { TestAuthenticationClient } from './test-authentication-client';
+import {
+  TestAuthenticationClient,
+  testAuthenticationClientStorage,
+} from './test-authentication-client';
 import { runAndCatch } from '@carnesen/run-and-catch';
 import { ErrorCode } from './error-code';
 
@@ -52,10 +55,11 @@ describe(AuthenticationClient.name, () => {
 
     // Now we are fully signed in
     expect(authenticationClient.isSignedIn()).toBe(true);
+    expect(testAuthenticationClientStorage.listItems().length).toBeGreaterThan(0);
 
     // Let's sign out and see if we can sign back in with the new password
     authenticationClient.signOut();
-
+    expect(testAuthenticationClientStorage.listItems().length).toBe(0);
     expect(authenticationClient.isSignedIn()).toBe(false);
 
     // Now the user has completed their initial login. Test subsequent logins.

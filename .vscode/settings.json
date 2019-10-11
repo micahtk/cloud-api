@@ -6,7 +6,8 @@
     "gmail",
     "keymirror",
     "postversion",
-    "preversion"
+    "preversion",
+    "totp"
   ],
   "tslint.enable": true
 }

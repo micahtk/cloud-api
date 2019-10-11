@@ -40,14 +40,21 @@ const NOT_SIGNED_IN_MESSAGE = `${AuthenticationClient.name} is not signed in`;
 export function AuthenticationClient(config: {
   systemId: SystemId;
   storage: AuthenticationStorage;
+  readonly?: boolean;
 }) {
-  const { systemId, storage } = config;
+  const { systemId, storage, readonly } = config;
+
+  // "readonly": We encountered some difficult-to-diagnose behavior in the
+  // alwaysAI CLI where a pending background call to getInfo was coming back and
+  // re-writing the storage despite the fact that the user had since "logged
+  // out". This is a bit of a hack to work around that.
+
   const { userPoolId, userPoolClientId } = CognitoUserPoolConfiguration(systemId);
 
   const cognitoUserPool = new CognitoUserPool({
     UserPoolId: userPoolId,
     ClientId: userPoolClientId,
-    Storage: storage,
+    Storage: readonly ? ReadonlyStorage(storage) : storage,
   });
 
   let cognitoUser: CognitoUser | undefined =
@@ -74,7 +81,7 @@ export function AuthenticationClient(config: {
     },
 
     async getInfo() {
-      const cognitoUser = await getCognitoUser();
+      const cognitoUser = getCognitoUser();
       await getCognitoUserSession();
 
       const userData: UserData = await new Promise((resolve, reject) => {
@@ -90,17 +97,11 @@ export function AuthenticationClient(config: {
           }
         });
       });
-      function findUserAttribute(name: string) {
-        const attribute = userData.UserAttributes.find(({ Name }) => Name === name);
-        if (!attribute || !attribute.Value) {
-          throw new Error(`Failed to find user attribute "${name}"`);
-        }
-        return attribute.Value;
-      }
+
       return {
         username: userData.Username,
-        uuid: findUserAttribute('sub'),
-        email: findUserAttribute('email'),
+        uuid: findUserAttribute(userData, 'sub'),
+        email: findUserAttribute(userData, 'email'),
       };
     },
 
@@ -279,4 +280,24 @@ export function AuthenticationClient(config: {
   function setCognitoUserSession(nextCognitoUserSession: CognitoUserSession) {
     cognitoUserSession = nextCognitoUserSession;
   }
+}
+
+function findUserAttribute(userData: UserData, name: string) {
+  const attribute = userData.UserAttributes.find(({ Name }) => Name === name);
+  if (!attribute || !attribute.Value) {
+    throw new Error(`Failed to find user attribute "${name}"`);
+  }
+  return attribute.Value;
+}
+
+function ReadonlyStorage(storage: AuthenticationStorage) {
+  const readonlyStorage: AuthenticationStorage = {
+    clear() {},
+    getItem(key) {
+      return storage.getItem(key);
+    },
+    removeItem() {},
+    setItem() {},
+  };
+  return readonlyStorage;
 }
