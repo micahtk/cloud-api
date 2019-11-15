@@ -7,13 +7,18 @@ const { props } = rpcModelVersionCodec;
 
 export const rpcCreateModelVersionArg0Props = {
   accuracy: props.accuracy,
+  benchmark: props.benchmark,
+  categories: props.categories,
   dataset: props.dataset,
+  dataset_url: props.dataset_url,
   description: props.description,
   id: props.description,
   inference_time: props.inference_time,
+  labels: props.labels,
   license: props.license,
   mean_average_precision_top_1: props.mean_average_precision_top_1,
   mean_average_precision_top_5: props.mean_average_precision_top_5,
+  media: props.media,
   model_parameters: props.model_parameters,
   public: props.public,
   website_url: props.website_url,
