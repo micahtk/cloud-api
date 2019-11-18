@@ -24,15 +24,17 @@ export const rpcCreateModelVersionWebArg0Props = {
   website_url: props.website_url,
 };
 
-export const rpcCreateModelVersionArg0Codec = t.type(
+export const rpcCreateModelVersionWebArg0Codec = t.type(
   rpcCreateModelVersionWebArg0Props,
   'CreateModelVersionData',
 );
 
-export type RpcCreateModelVersionArg0 = t.TypeOf<typeof rpcCreateModelVersionArg0Codec>;
+export type RpcCreateModelVersionWebArg0 = t.TypeOf<
+  typeof rpcCreateModelVersionWebArg0Codec
+>;
 
-export const createModelVersion = RpcMethodSpec({
+export const createModelVersionWeb = RpcMethodSpec({
   description: 'Publish a new alwaysAI model version',
-  argsCodec: t.tuple([rpcCreateModelVersionArg0Codec], 'args'),
+  argsCodec: t.tuple([rpcCreateModelVersionWebArg0Codec], 'args'),
   resultCodec: rpcModelVersionWebCodec,
 });

@@ -28,7 +28,7 @@ export const rpcModelVersionWebCodec = t.type(
     version: t.number,
     website_url: t.string,
   },
-  'RpcModelVersion',
+  'RpcModelVersionWeb',
 );
 
-export type RpcModelVersion = t.TypeOf<typeof rpcModelVersionWebCodec>;
+export type RpcModelVersionWeb = t.TypeOf<typeof rpcModelVersionWebCodec>;

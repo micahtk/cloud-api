@@ -1,4 +1,5 @@
 import { createModelVersion } from './create-model-version';
+import { createModelVersionWeb } from './create-model-version-web';
 import { createModelVersionFromBlobs } from './create-model-version-from-blobs';
 import { deleteModelVersions } from './delete-model-versions';
 import { finalizeModelVersion } from './finalize-model-version';
@@ -13,6 +14,7 @@ import { deprecateModelVersions } from './deprecate-model-versions';
 
 export const rpcMethodSpecs = {
   createModelVersion,
+  createModelVersionWeb,
   createModelVersionFromBlobs,
   deleteModelVersions,
   deprecateModelVersions,

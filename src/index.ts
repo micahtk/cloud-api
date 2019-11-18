@@ -7,10 +7,17 @@ export {
 export { rpcRequestCodec, RpcError, RpcResult, RpcRequest } from './rpc-types';
 export { RpcApi } from './rpc-api';
 export { rpcModelVersionCodec, RpcModelVersion } from './rpc-model-version';
+export { rpcModelVersionWebCodec, RpcModelVersionWeb } from './rpc-model-version-web';
+
 export {
   rpcCreateModelVersionArg0Codec,
   RpcCreateModelVersionArg0,
 } from './rpc-method-specs/create-model-version';
+
+export {
+  rpcCreateModelVersionWebArg0Codec,
+  RpcCreateModelVersionWebArg0,
+} from './rpc-method-specs/create-model-version-web';
 
 export {
   AuthenticationClient,
