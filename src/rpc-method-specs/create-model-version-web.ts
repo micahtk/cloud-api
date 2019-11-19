@@ -26,7 +26,7 @@ export const rpcCreateModelVersionWebArg0Props = {
 
 export const rpcCreateModelVersionWebArg0Codec = t.type(
   rpcCreateModelVersionWebArg0Props,
-  'CreateModelVersionData',
+  'CreateModelVersionWebData',
 );
 
 export type RpcCreateModelVersionWebArg0 = t.TypeOf<
@@ -34,7 +34,7 @@ export type RpcCreateModelVersionWebArg0 = t.TypeOf<
 >;
 
 export const createModelVersionWeb = RpcMethodSpec({
-  description: 'Publish a new alwaysAI model version',
+  description: 'Publish a new alwaysAI model version for the web',
   argsCodec: t.tuple([rpcCreateModelVersionWebArg0Codec], 'args'),
   resultCodec: rpcModelVersionWebCodec,
 });
