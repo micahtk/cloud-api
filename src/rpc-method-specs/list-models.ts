@@ -1,12 +1,16 @@
 import * as t from 'io-ts';
 import { rpcModelVersionCodec } from '../rpc-model-version';
 
-const publisherCodec = t.string;
+// const publisherCodec = t.string;
 
-const argsCodec = t.tuple([t.array(publisherCodec)], 'args');
+// const args = t.type({ publisher: t.array(publisherCodec) });
 
 export const listModels = {
   description: 'List alwaysAI models',
-  argsCodec,
+  argsCodec: t.tuple([
+    t.type({
+      publisher: t.string,
+    }),
+  ]),
   resultCodec: t.array(rpcModelVersionCodec),
 };
