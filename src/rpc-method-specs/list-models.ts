@@ -9,7 +9,7 @@ export const listModels = {
   description: 'List alwaysAI models',
   argsCodec: t.tuple([
     t.type({
-      publisher: t.string,
+      publisher: t.array(t.string),
     }),
   ]),
   resultCodec: t.array(rpcModelVersionCodec),
