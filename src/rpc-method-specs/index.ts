@@ -6,6 +6,7 @@ import { finalizeModelVersion } from './finalize-model-version';
 import { getModelVersion } from './get-model-version';
 import { getNull } from './get-null';
 import { getServerVersion } from './get-server-version';
+import { listModels } from './list-models';
 import { listPublicModelVersions } from './list-public-model-versions';
 import { throwError } from './throw-error';
 import { listPrivateModelVersions } from './list-private-model-versions';
@@ -23,6 +24,7 @@ export const rpcMethodSpecs = {
   getModelVersionByUuid,
   listPublicModelVersions,
   listPrivateModelVersions,
+  listModels,
 
   getServerVersion,
   getNull,

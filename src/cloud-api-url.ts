@@ -16,9 +16,11 @@ export function CloudApiUrl(systemId: SystemId) {
       break;
     }
 
-    default: {
-      throw new Error(`Unsupported systemID "${systemId}"`);
-    }
+    default:
+      {
+        throw new Error(`Unsupported systemID "${systemId}"`);
+      }
+      console.log('cloudAPIURL : ', cloudApiUrl);
   }
-  return cloudApiUrl;
+  return 'http://localhost:8000'; // cloudApiUrl;
 }
