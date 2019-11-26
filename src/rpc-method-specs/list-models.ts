@@ -12,6 +12,11 @@ const OperatingSystems = t.type({
   linux: t.boolean,
 });
 
+const Sort = t.type({
+  sortField: t.string,
+  sortDirection: t.string,
+});
+
 export const listModels = {
   description: 'List alwaysAI models',
   argsCodec: t.tuple([
@@ -26,6 +31,7 @@ export const listModels = {
       board: t.string,
       dataSet: t.array(t.string),
       osCompatibility: OperatingSystems,
+      sortCriteria: Sort,
     }),
   ]),
   resultCodec: t.array(rpcModelVersionCodec),
