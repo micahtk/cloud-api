@@ -21,3 +21,5 @@ export { CloudApiUrl } from './cloud-api-url';
 export { RpcClient } from './rpc-client';
 export { SystemDomainName } from './system-domain-name';
 export { CognitoUserPoolConfiguration } from './cognito-user-pool-configuration';
+export { CodedError } from './coded-error';
+export { runAndCatch, runAndCatchSync } from './run-and-catch';

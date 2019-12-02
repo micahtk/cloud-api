@@ -6,7 +6,7 @@ import {
   TestAuthenticationClient,
   testAuthenticationClientStorage,
 } from './test-authentication-client';
-import { runAndCatch } from '@carnesen/run-and-catch';
+import { runAndCatch } from './run-and-catch';
 import { ErrorCode } from './error-code';
 
 describe(AuthenticationClient.name, () => {

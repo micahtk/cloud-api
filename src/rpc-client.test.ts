@@ -1,6 +1,6 @@
 window['fetch'] = require('node-fetch');
 
-import { runAndCatch } from '@carnesen/run-and-catch';
+import { runAndCatch } from './run-and-catch';
 
 import { RpcClient } from './rpc-client';
 import { AuthenticationState } from './authentication-client';

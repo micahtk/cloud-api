@@ -20,7 +20,6 @@
     "postversion": "npm publish"
   },
   "dependencies": {
-    "@carnesen/coded-error": "0.1.0",
     "@types/keymirror": "0.1.1",
     "amazon-cognito-identity-js": "3.1.2",
     "keymirror": "0.1.1",
@@ -36,7 +35,6 @@
     "@alwaysai/codecs": "0.0.0",
     "@alwaysai/tsconfig": "0.0.0",
     "@alwaysai/tslint-config": "0.0.3",
-    "@carnesen/run-and-catch": "0.0.0",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.12",
     "aws-sdk": "2.547.0",
