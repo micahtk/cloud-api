@@ -32,7 +32,7 @@ export const listModels = {
       dataSet: t.array(t.string),
       osCompatibility: OperatingSystems,
       sortCriteria: Sort,
-      category: t.string,
+      purpose: t.string,
     }),
   ]),
   resultCodec: t.array(rpcModelVersionCodec),
